@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Hall Ticket</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #4f46e5;
+    --secondary: #06b6d4;
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --dark: #1f2933;
+    --light: #f9fafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px 20px;
+    color: var(--dark);
+}
+
+/* Glassmorphism Container */
+.container {
+    max-width: 950px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Title */
+h2 {
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 15px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td b {
+    color: #374151;
+}
+
+/* Photo Cell */
+.photo-cell {
+    text-align: center;
+}
+
+.photo-cell img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid var(--secondary);
+    margin-bottom: 10px;
+}
+
+/* Upload Button */
+.file-input-label {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Save Button */
+.upload-button {
+    margin-top: 8px;
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+    padding: 10px;
+    font-weight: 600;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-button:hover {
+    background: #16a34a;
+    transform: scale(1.03);
+}
+
+.upload-button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #eef2ff, #ecfeff);
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.instructions b {
+    color: var(--primary);
+}
+
+/* Signature Row */
+.signature td {
+    height: 70px;
+    text-align: center;
+    vertical-align: bottom;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Smooth hover row effect */
+tr:hover td {
+    background-color: rgba(79, 70, 229, 0.04);
+    transition: 0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <center>
+        <h2>EXAMINATION HALL TICKET</h2>
+    </center>
+
+    <table>
+        <tr>
+            <td colspan="2"><b>College Name:</b> Fr. Conceicao Rodrigues Institute of Engineering</td>
+            <td class="photo-cell">
+                <img id="studentPhoto" src="https://via.placeholder.com/110">
+                <label for="imageInput" class="file-input-label">📤 Upload Photo</label>
+                <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(this)">
+                <button class="upload-button" id="uploadBtn" disabled>Save Photo</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><b>Student Name</b></td>
+            <td colspan="2">Mitesh Rane</td>
+        </tr>
+
+        <tr>
+            <td><b>Roll Number</b></td>
+            <td colspan="2">5024150</td>
+        </tr>
+
+        <tr>
+            <td><b>Course</b></td>
+            <td colspan="2">B.Tech - Information Technology</td>
+        </tr>
+
+        <tr>
+            <td><b>Semester</b></td>
+            <td colspan="2">IV</td>
+        </tr>
+
+        <tr>
+            <td><b>Exam Date</b></td>
+            <td colspan="2">15 March 2026</td>
+        </tr>
+
+        <tr>
+            <td><b>Exam Time</b></td>
+            <td colspan="2">10:00 AM - 1:00 PM</td>
+        </tr>
+
+        <tr>
+            <td><b>Exam Center</b></td>
+            <td colspan="2">Main Block, Room No: 310</td>
+        </tr>
+
+        <tr class="signature">
+            <td>Student Signature</td>
+            <td>Controller of Examinations</td>
+            <td>Principal</td>
+        </tr>
+    </table>
+
+    <div class="instructions">
+        <b>Instructions:</b><br>
+        1. Bring this hall ticket to the examination hall. NOT NECESSARY 😌<br>
+        2. Carry SOME CHEATS 🤫<br>
+        3. Mobile phones are allowed 📱
+    </div>
+</div>
+
+<script>
+function handleImageUpload(input) {
+    const uploadBtn = document.getElementById('uploadBtn');
+
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+
+        if (file.size > 5 * 1024 * 1024) {
+            alert("File too large (max 5MB)");
+            uploadBtn.disabled = true;
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = e => {
+            document.getElementById('studentPhoto').src = e.target.result;
+            uploadBtn.disabled = false;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+document.getElementById("uploadBtn").onclick = () => {
+    alert("✅ Photo saved successfully!");
+};
+</script>
+
+</body>
+</html>

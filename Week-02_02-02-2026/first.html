@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formatting & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            background-color: #f9f9f9;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,0.25);
+        }
+        
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .info {
+            background-color: #e7f3ff;
+            padding: 10px;
+            border-radius: 4px;
+            color: #004085;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Formatting & Forms Guide</h1>
+        
+        <!-- IMAGE SECTION -->
+        <div class="section" style="text-align: center;">
+            <h2>Sample Image:</h2>
+            <img 
+                src="https://via.placeholder.com/400x300?text=Sample+Image" 
+                alt="Sample Image for demonstration"
+                style="max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0;"
+            >
+            <p><em>This is a placeholder image (400x300px)</em></p>
+        </div>
+        
+        <!-- FORMATTING SECTION -->
+        <div class="section">
+            <h2>Formatting Best Practices:</h2>
+            <ul>
+                <li><strong>Indentation:</strong> Use 2-4 spaces for nested elements</li>
+                <li><strong>Naming:</strong> Use lowercase for HTML tags and attributes</li>
+                <li><strong>Semantic HTML:</strong> Use meaningful tags (h1, p, section, article)</li>
+                <li><strong>Whitespace:</strong> Keep proper spacing for readability</li>
+                <li><strong>CSS Classes:</strong> Use descriptive names like "container", "card", "btn"</li>
+            </ul>
+        </div>
+        
+        <!-- FORM SECTION -->
+        <div class="section">
+            <h2>Registration Form Example:</h2>
+            <form action="/submit" method="POST">
+                
+                <!-- Text Input -->
+                <div>
+                    <label for="fullname">Full Name:</label>
+                    <input 
+                        type="text" 
+                        id="fullname" 
+                        name="fullname" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <div class="info">Required field</div>
+                </div>
+                
+                <!-- Email Input -->
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+                
+                <!-- Dropdown Select -->
+                <div>
+                    <label for="country">Select Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Choose a country --</option>
+                        <option value="india">India</option>
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                </div>
+                
+                <!-- Textarea -->
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4" 
+                        placeholder="Enter your message here..."
+                    ></textarea>
+                </div>
+                
+                <!-- Radio Buttons -->
+                <div>
+                    <label>Subscription Level:</label>
+                    <div style="margin-top: 10px;">
+                        <input type="radio" id="free" name="subscription" value="free">
+                        <label for="free" style="font-weight: normal;">Free</label>
+                        
+                        <input type="radio" id="premium" name="subscription" value="premium">
+                        <label for="premium" style="font-weight: normal;">Premium</label>
+                    </div>
+                </div>
+                
+                <!-- Checkbox -->
+                <div>
+                    <input type="checkbox" id="agree" name="agree" required>
+                    <label for="agree" style="font-weight: normal;">I agree to the terms and conditions</label>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit">Submit Form</button>
+                <button type="reset" style="background-color: #6c757d;">Clear Form</button>
+            </form>
+        </div>
+        
+        <!-- FORMATTING TIPS -->
+        <div class="section">
+            <h2>Key Formatting Tips:</h2>
+            <ol>
+                <li><strong>Consistent Indentation:</strong> Makes code readable and maintainable</li>
+                <li><strong>Always use closing tags:</strong> &lt;/form&gt;, &lt;/div&gt;, etc.</li>
+                <li><strong>Use semantic HTML:</strong> &lt;form&gt;, &lt;fieldset&gt;, &lt;legend&gt;</li>
+                <li><strong>Link labels to inputs:</strong> Use 'for' attribute to improve usability</li>
+                <li><strong>Use meaningful IDs/names:</strong> Helps with CSS, JavaScript, and form submission</li>
+                <li><strong>Add accessibility attributes:</strong> 'required', 'placeholder', 'aria-label'</li>
+            </ol>
+        </div>
+    </div>
+    <style>
+        :root{
+            --primary: #007bff;
+            --accent: #0056b3;
+            --muted: #6c757d;
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --radius: 10px;
+            --maxw: 720px;
+        }
+
+        /* Page-level enhancements */
+        body{
+            background: linear-gradient(180deg, #f0f4ff 0%, #f8fafc 100%);
+            color: #222;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container{
+            max-width: var(--maxw);
+            margin: 24px auto;
+            padding: 28px;
+            border-radius: var(--radius);
+            box-shadow: 0 6px 18px rgba(20,30,60,0.08);
+            background: linear-gradient(180deg, var(--card), #fbfdff);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .container:hover{
+            transform: translateY(-4px);
+        }
+
+        h1{ font-size: clamp(20px, 3vw, 28px); letter-spacing: .4px; }
+
+        .section{
+            transition: box-shadow .18s ease, transform .18s ease;
+            border-left-color: var(--primary);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .section:hover{
+            box-shadow: 0 8px 20px rgba(12,30,80,0.06);
+            transform: translateY(-3px);
+        }
+
+        img{ display: block; margin: 0 auto; filter: saturate(.95) contrast(.98); }
+
+        /* Responsive, modern form layout using CSS Grid */
+        form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 20px;
+            align-items: start;
+        }
+
+        form > div{ display: flex; flex-direction: column; }
+
+        form input, form textarea, form select{ width: 100%; box-sizing: border-box; }
+
+        form .info{ font-size: 12px; margin-top: 6px; background: linear-gradient(90deg,#eaf4ff,#f0fbff); color:#035; padding:8px; border-radius:6px; }
+
+        /* Buttons align across the full grid width but keep spacing */
+        form button{ grid-column: 1 / -1; width: calc(50% - 10px); justify-self: start; }
+        form button[type="reset"]{ justify-self: end; }
+
+        @media (max-width: 700px){
+            form{ grid-template-columns: 1fr; }
+            form button{ width: 100%; }
+        }
+
+        /* Modern controls */
+        input[type="radio"], input[type="checkbox"]{ accent-color: var(--primary); transform: scale(1.05); margin-right: 8px; }
+        label[for]{ cursor: pointer; }
+
+        button{ box-shadow: 0 6px 14px rgba(0,123,255,0.12); transition: transform .12s ease; }
+        button:active{ transform: translateY(1px) scale(.998); }
+
+        ul li, ol li{ margin: 8px 0; line-height: 1.45; }
+
+        a{ color: var(--primary); text-decoration: none; }
+        a:hover{ text-decoration: underline; }
+
+    </style>
+</body>
+</html>
