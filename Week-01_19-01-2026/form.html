@@ -1,124 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Advanced HTML Form</title>
+    <title>Student Registration Form</title>
 </head>
 <body>
 
-    <h1>Student Registration Form</h1>
-    <p>Please fill out the form below carefully.</p>
+<h1 align="center">Student Registration Form</h1>
+<p align="center">Please fill all required details</p>
 
-    <form action="#" method="post">
+<form>
+<table border="1" width="100%" cellpadding="8" cellspacing="0">
 
-        <fieldset>
-            <legend><strong>Personal Information</strong></legend>
+<tr>
+<th colspan="4">Personal Information</th>
+</tr>
 
-            <label>Full Name:</label><br>
-            <input type="text" name="fullname" placeholder="Enter your full name"><br><br>
+<tr>
+<td>Full Name</td>
+<td><input type="text" required></td>
+<td>Date of Birth</td>
+<td><input type="date"></td>
+</tr>
 
-            <label>Date of Birth:</label><br>
-            <input type="date" name="dob"><br><br>
+<tr>
+<td>Email</td>
+<td><input type="email" required></td>
+<td>Password</td>
+<td><input type="password"></td>
+</tr>
 
-            <label>Email Address:</label><br>
-            <input type="email" name="email" placeholder="example@email.com"><br><br>
+<tr>
+<td>Gender</td>
+<td colspan="3">
+<input type="radio" name="g"> Male
+<input type="radio" name="g"> Female
+<input type="radio" name="g"> Other
+</td>
+</tr>
 
-            <label>Password:</label><br>
-            <input type="password" name="password"><br><br>
+<tr>
+<th colspan="4">Contact Details</th>
+</tr>
 
-            <label>Confirm Password:</label><br>
-            <input type="password" name="confirm_password"><br><br>
+<tr>
+<td>Phone</td>
+<td><input type="tel"></td>
+<td>City</td>
+<td><input type="text"></td>
+</tr>
 
-            <label>Gender:</label><br>
-            <input type="radio" name="gender" value="Male"> Male
-            <input type="radio" name="gender" value="Female"> Female
-            <input type="radio" name="gender" value="Other"> Other<br><br>
-        </fieldset>
+<tr>
+<td>State</td>
+<td><input type="text"></td>
+<td>Country</td>
+<td><input type="text"></td>
+</tr>
 
-        <br>
+<tr>
+<td>Address</td>
+<td colspan="3"><textarea rows="2" cols="80"></textarea></td>
+</tr>
 
-        <fieldset>
-            <legend><strong>Contact Details</strong></legend>
+<tr>
+<th colspan="4">Education Details</th>
+</tr>
 
-            <label>Phone Number:</label><br>
-            <input type="tel" name="phone" placeholder="1234567890"><br><br>
+<tr>
+<td>Qualification</td>
+<td>
+<select>
+<option>Select</option>
+<option>High School</option>
+<option>Diploma</option>
+<option>UG</option>
+<option>PG</option>
+</select>
+</td>
 
-            <label>Address:</label><br>
-            <textarea name="address" rows="4" cols="40" placeholder="Enter your address"></textarea><br><br>
+<td>Mode</td>
+<td>
+<input type="radio" name="m"> Online
+<input type="radio" name="m"> Offline
+</td>
+</tr>
 
-            <label>City:</label><br>
-            <input type="text" name="city"><br><br>
+<tr>
+<td>Courses</td>
+<td colspan="3">
+<input type="checkbox"> HTML
+<input type="checkbox"> CSS
+<input type="checkbox"> JavaScript
+<input type="checkbox"> Python
+</td>
+</tr>
 
-            <label>State:</label><br>
-            <input type="text" name="state"><br><br>
+<tr>
+<th colspan="4">Additional Info</th>
+</tr>
 
-            <label>Country:</label><br>
-            <input type="text" name="country"><br><br>
+<tr>
+<td>Resume</td>
+<td><input type="file"></td>
+<td>Experience</td>
+<td><input type="range" min="0" max="10"></td>
+</tr>
 
-            <label>Postal Code:</label><br>
-            <input type="number" name="zipcode"><br><br>
-        </fieldset>
+<tr>
+<td>About You</td>
+<td colspan="3"><textarea rows="3" cols="80"></textarea></td>
+</tr>
 
-        <br>
+<tr>
+<td colspan="4">
+<input type="checkbox" required> I declare the above information is correct.
+</td>
+</tr>
 
-        <fieldset>
-            <legend><strong>Education Details</strong></legend>
+<tr>
+<td colspan="4" align="center">
+<input type="submit" value="Register">
+<input type="reset" value="Clear">
+</td>
+</tr>
 
-            <label>Highest Qualification:</label><br>
-            <select name="qualification">
-                <option>Select</option>
-                <option>High School</option>
-                <option>Diploma</option>
-                <option>Undergraduate</option>
-                <option>Postgraduate</option>
-            </select><br><br>
-
-            <label>Courses Interested:</label><br>
-            <input type="checkbox" name="course" value="HTML"> HTML
-            <input type="checkbox" name="course" value="CSS"> CSS
-            <input type="checkbox" name="course" value="JavaScript"> JavaScript
-            <input type="checkbox" name="course" value="Python"> Python<br><br>
-
-            <label>Preferred Mode of Learning:</label><br>
-            <input type="radio" name="mode" value="Online"> Online
-            <input type="radio" name="mode" value="Offline"> Offline<br><br>
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend><strong>Additional Information</strong></legend>
-
-            <label>Upload Resume:</label><br>
-            <input type="file" name="resume"><br><br>
-
-            <label>Experience Level:</label><br>
-            <input type="range" name="experience" min="0" max="10"><br><br>
-
-            <label>Preferred Start Month:</label><br>
-            <input type="month" name="start_month"><br><br>
-
-            <label>Favorite Color:</label><br>
-            <input type="color" name="color"><br><br>
-
-            <label>About Yourself:</label><br>
-            <textarea name="about" rows="5" cols="50"></textarea><br><br>
-        </fieldset>
-
-        <br>
-
-        <fieldset>
-            <legend><strong>Declaration</strong></legend>
-
-            <input type="checkbox" name="agree">
-            I hereby declare that the information provided is true and correct.<br><br>
-        </fieldset>
-
-        <br>
-
-        <input type="submit" value="Register">
-        <input type="reset" value="Clear Form">
-
-    </form>
+</table>
+</form>
 
 </body>
 </html>

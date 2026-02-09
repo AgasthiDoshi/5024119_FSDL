@@ -2,202 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Formatting & Forms</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
-        
-        .container {
-            max-width: 600px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        
-        .section {
-            margin: 20px 0;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            background-color: #f9f9f9;
-        }
-        
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        label {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        input, textarea, select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-        
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0,123,255,0.25);
-        }
-        
-        button {
-            padding: 12px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        .info {
-            background-color: #e7f3ff;
-            padding: 10px;
-            border-radius: 4px;
-            color: #004085;
-            font-size: 12px;
-        }
-    </style>
+    <title>HTML Forms Guide</title>
 </head>
 <body>
-    <div class="container">
-        <h1>HTML Formatting & Forms Guide</h1>
-        
-        <!-- IMAGE SECTION -->
-        <div class="section" style="text-align: center;">
-            <h2>Sample Image:</h2>
-            <img 
-                src="https://via.placeholder.com/400x300?text=Sample+Image" 
-                alt="Sample Image for demonstration"
-                style="max-width: 100%; height: auto; border-radius: 8px; margin: 15px 0;"
-            >
-            <p><em>This is a placeholder image (400x300px)</em></p>
-        </div>
-        
-        <!-- FORMATTING SECTION -->
-        <div class="section">
-            <h2>Formatting Best Practices:</h2>
-            <ul>
-                <li><strong>Indentation:</strong> Use 2-4 spaces for nested elements</li>
-                <li><strong>Naming:</strong> Use lowercase for HTML tags and attributes</li>
-                <li><strong>Semantic HTML:</strong> Use meaningful tags (h1, p, section, article)</li>
-                <li><strong>Whitespace:</strong> Keep proper spacing for readability</li>
-                <li><strong>CSS Classes:</strong> Use descriptive names like "container", "card", "btn"</li>
-            </ul>
-        </div>
-        
-        <!-- FORM SECTION -->
-        <div class="section">
-            <h2>Registration Form Example:</h2>
-            <form action="/submit" method="POST">
-                
-                <!-- Text Input -->
-                <div>
-                    <label for="fullname">Full Name:</label>
-                    <input 
-                        type="text" 
-                        id="fullname" 
-                        name="fullname" 
-                        placeholder="Enter your full name"
-                        required
-                    >
-                    <div class="info">Required field</div>
-                </div>
-                
-                <!-- Email Input -->
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        placeholder="example@email.com"
-                        required
-                    >
-                </div>
-                
-                <!-- Dropdown Select -->
-                <div>
-                    <label for="country">Select Country:</label>
-                    <select id="country" name="country" required>
-                        <option value="">-- Choose a country --</option>
-                        <option value="india">India</option>
-                        <option value="usa">United States</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="canada">Canada</option>
-                    </select>
-                </div>
-                
-                <!-- Textarea -->
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea 
-                        id="message" 
-                        name="message" 
-                        rows="4" 
-                        placeholder="Enter your message here..."
-                    ></textarea>
-                </div>
-                
-                <!-- Radio Buttons -->
-                <div>
-                    <label>Subscription Level:</label>
-                    <div style="margin-top: 10px;">
-                        <input type="radio" id="free" name="subscription" value="free">
-                        <label for="free" style="font-weight: normal;">Free</label>
-                        
-                        <input type="radio" id="premium" name="subscription" value="premium">
-                        <label for="premium" style="font-weight: normal;">Premium</label>
-                    </div>
-                </div>
-                
-                <!-- Checkbox -->
-                <div>
-                    <input type="checkbox" id="agree" name="agree" required>
-                    <label for="agree" style="font-weight: normal;">I agree to the terms and conditions</label>
-                </div>
-                
-                <!-- Submit Button -->
-                <button type="submit">Submit Form</button>
-                <button type="reset" style="background-color: #6c757d;">Clear Form</button>
-            </form>
-        </div>
-        
-        <!-- FORMATTING TIPS -->
-        <div class="section">
-            <h2>Key Formatting Tips:</h2>
-            <ol>
-                <li><strong>Consistent Indentation:</strong> Makes code readable and maintainable</li>
-                <li><strong>Always use closing tags:</strong> &lt;/form&gt;, &lt;/div&gt;, etc.</li>
-                <li><strong>Use semantic HTML:</strong> &lt;form&gt;, &lt;fieldset&gt;, &lt;legend&gt;</li>
-                <li><strong>Link labels to inputs:</strong> Use 'for' attribute to improve usability</li>
-                <li><strong>Use meaningful IDs/names:</strong> Helps with CSS, JavaScript, and form submission</li>
-                <li><strong>Add accessibility attributes:</strong> 'required', 'placeholder', 'aria-label'</li>
-            </ol>
-        </div>
-    </div>
+
+<h1>HTML Formatting & Forms</h1>
+
+<!-- Image Section -->
+<h2>Sample Image</h2>
+<img src="https://via.placeholder.com/300" alt="Sample Image">
+<p><em>Placeholder image</em></p>
+
+<hr>
+
+<!-- Formatting Tips -->
+<h2>Formatting Best Practices</h2>
+<ul>
+    <li>Use proper indentation</li>
+    <li>Use semantic HTML tags</li>
+    <li>Use meaningful names</li>
+    <li>Maintain readability</li>
+</ul>
+
+<hr>
+
+<!-- Form Section -->
+<h2>Registration Form</h2>
+
+<form>
+    <label>Full Name:</label><br>
+    <input type="text" placeholder="Enter your name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="example@email.com" required><br><br>
+
+    <label>Country:</label><br>
+    <select required>
+        <option value="">Select</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Canada</option>
+    </select><br><br>
+
+    <label>Message:</label><br>
+    <textarea rows="4"></textarea><br><br>
+
+    <label>Subscription:</label><br>
+    <input type="radio" name="sub"> Free
+    <input type="radio" name="sub"> Premium<br><br>
+
+    <input type="checkbox" required> I agree to the terms<br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Clear">
+</form>
+
+<hr>
+
+<!-- Final Tips -->
+<h2>Key HTML Tips</h2>
+<ol>
+    <li>Always close tags</li>
+    <li>Use labels with inputs</li>
+    <li>Use required attributes</li>
+</ol>
+
 </body>
 </html>
