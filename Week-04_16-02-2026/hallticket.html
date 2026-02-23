@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Examination Hall Ticket</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);padding:20px}
+.hall-card{max-width:900px;margin:auto;border-radius:18px}
+.photo-box img{width:120px;height:120px;object-fit:cover;border-radius:12px;border:3px solid #0d6efd}
+.signature{height:60px;vertical-align:bottom;font-weight:500}
+@media print{body{background:#fff;padding:0}.btn,.alert{display:none}}
+</style>
+</head>
+<body>
+<div class="card shadow-lg hall-card">
+<div class="card-body p-4">
+<h3 class="text-center text-primary fw-bold mb-1">EXAMINATION HALL TICKET</h3>
+<p class="text-center text-muted mb-3">Academic Year 2025–26</p>
+<p class="text-end fw-semibold">Hall Ticket No: <span id="ticketNo"></span></p>
+<div class="table-responsive">
+<table class="table table-bordered align-middle">
+<tr class="table-light">
+<td colspan="2" class="fw-semibold">College Name:<br><span class="text-muted">Fr. Conceicao Rodrigues Institute of Engineering</span></td>
+<td class="text-center photo-box">
+<img id="photoPreview" src="https://via.placeholder.com/120">
+<div class="mt-2">
+<label class="btn btn-sm btn-outline-primary">Upload Photo<input type="file" hidden accept="image/*" onchange="previewPhoto(this)"></label>
+</div>
+</td>
+</tr>
+<tr><td class="fw-semibold">Student Name</td><td colspan="2">Mitesh Rane</td></tr>
+<tr><td class="fw-semibold">Roll Number</td><td colspan="2">5024150</td></tr>
+<tr><td class="fw-semibold">Course</td><td colspan="2">B.Tech – Information Technology</td></tr>
+<tr><td class="fw-semibold">Semester</td><td colspan="2"><span class="badge bg-primary">IV</span></td></tr>
+<tr><td class="fw-semibold">Examination Date</td><td colspan="2"><input type="date" id="examDate" class="form-control"></td></tr>
+<tr><td class="fw-semibold">Examination Time</td><td colspan="2">10:00 AM – 1:00 PM</td></tr>
+<tr><td class="fw-semibold">Examination Center</td><td colspan="2">Main Block, Room No. 310</td></tr>
+<tr class="text-center"><td class="signature">Student Signature</td><td class="signature">Controller of Examinations</td><td class="signature">Principal</td></tr>
+</table>
+</div>
+<div class="alert alert-info mt-3">
+<h6 class="fw-bold mb-2">Important Instructions:</h6>
+<ol class="mb-0">
+<li>Carry hall ticket and college ID.</li>
+<li>Reach 30 minutes before exam.</li>
+<li>No electronic devices allowed.</li>
+<li>Follow exam rules strictly.</li>
+</ol>
+</div>
+<div class="text-center mt-3">
+<button class="btn btn-success me-2" onclick="validateDate()">Validate Date</button>
+<button class="btn btn-primary" onclick="window.print()">Print Hall Ticket</button>
+</div>
+</div>
+</div>
+<script>
+function previewPhoto(input){
+if(input.files&&input.files[0]){
+const reader=new FileReader();
+reader.onload=e=>document.getElementById('photoPreview').src=e.target.result;
+reader.readAsDataURL(input.files[0]);
+}}
+function generateTicket(){
+const roll="5024150";
+const rand=Math.floor(Math.random()*1000);
+document.getElementById("ticketNo").innerText="CRIE-"+roll+"-"+rand;
+}
+function validateDate(){
+const input=document.getElementById("examDate").value;
+if(!input)return alert("Please select exam date");
+const selected=new Date(input);
+const today=new Date();
+today.setHours(0,0,0,0);
+if(selected<today)alert("Exam date cannot be in the past!");
+else alert("Exam date is valid ✔");
+}
+generateTicket();
+</script>
+</body>
+</html>
